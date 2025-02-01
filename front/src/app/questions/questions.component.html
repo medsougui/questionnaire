@@ -1,0 +1,46 @@
+<div class="mb-4 d-flex align-items-center">
+    <div>
+      <button class="ms-lg-5 me-1 me-xl-5 btn btn-dark" routerLink="/add" style="min-width: 121px; width: 70%; border-radius: 8px;">Add question</button>
+    </div>
+    <div class="input-group w-50">
+      <input type="text" placeholder="Search ..." [(ngModel)]='s' id="" (keyup)="search(s)" style="border-radius: 100px 0px 0px 100px;height: 38px;" class="form-control" />
+      <select class="bg-dark text-light" [(ngModel)]='by' style="height: 38px; border: none;border-radius: 0px 100px 100px 0px;" id="">
+        <option value="questions">Question</option>
+        <option value="id" selected>Id</option>
+      </select>
+    </div>
+  </div>
+  
+  <div>
+    <table class="table table-striped">
+      <thead class="fw-bold">
+        <tr>
+          <td>Id</td>
+          <td>Question</td>
+          <td class="text-end pe-4">Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height:55px;" *ngFor="let quest of questq | paginate: { itemsPerPage: 8, currentPage: page }">
+          <td class="align-middle">{{ quest.id }}</td>
+          <td class="align-middle">{{ quest.questions }}</td>
+          <td class="text-end">
+            <div class="d-flex justify-content-end align-items-center">
+              <button class="btn btn-dark me-1" [routerLink]="['/det', quest.id]"><i class="bi bi-three-dots"></i></button>
+              <div *ngIf="!quest.inuse" (click)="changeWithCooldown(quest.id)" class="form-check form-switch">
+                <input class="form-check-input p-2" type="checkbox" [disabled]="dis[quest.id]" name="cc" id="{{ quest.id }}">
+              </div>
+              <div *ngIf="quest.inuse" (click)="changeWithCooldown(quest.id)" class="form-check form-switch">
+                <input [checked]="quest.inuse" class="form-check-input p-2" [disabled]="dis[quest.id]" type="checkbox" name="cc" id="{{ quest.id }}">
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  </div>
+  

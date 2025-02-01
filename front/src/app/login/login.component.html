@@ -1,0 +1,14 @@
+<body>
+    <div class="wrapper bg-dark">
+<h1>login</h1>
+<div class="input-box">
+    <input type="text" placeholder="email" [(ngModel)]="mail" required> 
+    <i class="bi bi-person-fill text-white"></i>
+</div>
+<div class="input-box ">
+    <input type="password" placeholder="password" [(ngModel)]="pwd"> 
+    <i class="bi bi-lock-fill text-white"></i>
+</div>
+<button type="submit" class="btn btn-success" (click)="verif()">login</button><br><br>
+</div>
+</body>

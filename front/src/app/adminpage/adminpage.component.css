@@ -1,0 +1,7 @@
+.nav-pills li a:hover{
+    background-color: brown;
+}
+
+.dropdown-menu {
+--bs-dropdown-link-active-bg: brown;
+}

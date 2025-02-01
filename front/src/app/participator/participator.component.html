@@ -1,0 +1,40 @@
+<div class="mb-4 ms-5 d-flex align-items-center">
+    <div class="input-group w-50">
+      <input type="text" *ngIf="by != 'date'" placeholder="Search ..." [(ngModel)]='s' id="" (keyup)="search(s)" style="border-radius: 100px 0px 0px 100px;height: 38px;" class="form-control" />
+      <input type="text" *ngIf="by == 'date'" placeholder="year ..." [(ngModel)]='year' id="" (keyup)="search(s)" style="border-radius: 100px 0px 0px 100px;height: 38px;" class="form-control" />
+      <input type="text" *ngIf="by == 'date'" placeholder="month ..." [(ngModel)]='month' id="" (keyup)="search(s)" style="height: 38px;" class="form-control" />
+      <input type="text" *ngIf="by == 'date'" placeholder="day ..." [(ngModel)]='day' id="" (keyup)="search(s)" style="height: 38px;" class="form-control" />
+      <select class="bg-dark text-light" [(ngModel)]='by' style="height: 38px; border: none; border-radius: 0px 100px 100px 0px;" id="">
+        <option value="name">Name</option>
+        <option value="mat">Mat</option>
+        <option value="score">Score</option>
+        <option value="date">Date</option>
+      </select>
+    </div>
+  </div>
+  
+  <div>
+    <table class="table table-striped">
+      <thead class="text-capitalize fw-bold">
+        <tr>
+          <td>mat</td>
+          <td>name</td>
+          <td>score</td>
+          <td>number</td>
+          <td>date</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height: 55px;" *ngFor="let d of data | paginate: { itemsPerPage: 8, currentPage: page }">
+          <td class="align-middle">{{d.mat}}</td>
+          <td class="text-capitalize align-middle">{{d.name}}</td>
+          <td class="align-middle">{{d.score}}</td>
+          <td class="align-middle">{{d.num}}</td>
+          <td class="align-middle">{{d.date.substring(0, 10)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+  </div>
+  

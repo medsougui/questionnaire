@@ -1,0 +1,50 @@
+.table{
+    width:80%;
+    border-color: brown;
+}
+button:hover{
+    background-color: brown;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+     box-shadow: none; 
+     border-color: transparent; 
+  }
+  .form-check-input:checked {
+    border-color: green; 
+    background-color: green;
+  }
+  
+  .form-check-input:not(:checked) {
+    border-color: red; 
+    background-color: red; 
+  }
+  .form-switch .form-check-input {
+    --bs-form-switch-bg:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+  select{
+    width: 25%;
+    min-width: 70px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.input-group{
+    border:solid 2px;
+    border-radius: 1000px;
+    border-color: black;
+}
+.input-group:focus-within{
+   border-color:blue;
+   border-radius: 100px;
+   box-shadow: 0 0 0 0.2rem rgba(59, 100, 223, 0.5); /* Brown box shadow */
+
+}

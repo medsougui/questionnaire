@@ -1,0 +1,8 @@
+<body>
+   <ng-container *ngIf="user == ''; else adminPage">
+    <router-outlet></router-outlet>
+  </ng-container>
+  <ng-template #adminPage>
+    <app-adminpage></app-adminpage>
+  </ng-template> 
+</body>

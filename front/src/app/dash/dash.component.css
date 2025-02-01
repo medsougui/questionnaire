@@ -1,0 +1,42 @@
+.circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .winner-count {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 27px;
+  }
+  .widg{
+    background-color: rgba(170, 171, 172, 0.3) !important ;
+    border: solid;
+    border-radius: 20px;
+    height: 120px;
+    border-width: 1px;
+    border-color: brown;
+  }
+  .rectanglev{
+    width: 25px ;
+    border:solid;
+    height:25px;
+    background-color: green;
+    border-width: 2px;
+    display: block ;
+  }
+  .rectanglef{
+    width: 25px ;
+    border:solid;
+    height:25px;
+    background-color: red;
+    border-width: 2px;
+    display: block;
+  }
+  

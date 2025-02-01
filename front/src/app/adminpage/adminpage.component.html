@@ -1,0 +1,49 @@
+<body style="overflow: hidden;">
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="bg-dark col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-between">
+            <div class="bg-dark p2 "> 
+                <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
+                   <i class="fs-3 ms-1 d-sm-none">dq</i><span class="fs-4 d-none py-3 p-3 d-sm-inline">decquest</span>
+                </a><hr style="color: beige;">
+                <ul class="nav nav-pills flex-column mt-4 ">
+                     <li class="nav-item py-2 py-sm-0 mt-2">
+                        <a routerLink="/dash" class="nav-link text-white" aria-current="page">
+                            <i class="fs-5 bi bi-clipboard-data "></i><span class="fs-5 ms-3 d-none d-sm-inline">dashboard</span>
+                        </a>
+                    </li> 
+                    <li class="nav-item py-2 py-sm-0 mt-2">
+                        <a routerLink="/quest" class="nav-link text-white " aria-current="page">
+                            <i class="fs-5 bi bi-list-task"></i><span class="fs-5 ms-3 d-none d-sm-inline">question</span>
+                        </a>                        
+                    </li>
+                    <li class="nav-item py-2 py-sm-0 mt-2">
+                        <a routerLink="/part" class="nav-link text-white" aria-current="page">
+                            <i class="fs-5 bi bi-person-lines-fill"></i><span class="fs-5 ms-3 d-none d-sm-inline">participators</span>
+                        </a> 
+                    </li>
+                </ul>
+                
+            </div>
+        <div class="dropdown open py-3">
+            <button
+                class="btn border-none dropdown-toggle text-white"
+                type="button"
+                id="triggerId"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <i class="bi bi-person-fill"></i><span class="d-sm-inline d-none ms-2">{{nom}}</span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="triggerId">
+                <button class="dropdown-item" (click)="logout()">log out</button>
+            </div>
+        </div>
+        </div>
+        <div class="p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+</body>

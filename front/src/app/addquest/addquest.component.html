@@ -1,0 +1,31 @@
+<body class="">
+    <div class=" d-flex ">
+    <i class="bi-arrow-left-circle h3 ms-2 mt-2 arrow-icon " routerLink="/quest"></i>    
+    </div>
+    <div #container class="ms-0 ms-lg-5 text-center mt-3  d-flex justify-content-center align-items-center xxx  w-75  card shadow-sm">
+        <div class="w-100 justify-content-center mt-3" >
+            <h2 class="mb-3 fw-bold text-dark">Question</h2>
+            <div class="d-flex justify-content-center">
+            <div class="mb-2 input-group justify-content-center" style="width: 90%;">
+                <input type="text" class="form-control " placeholder="Enter your question" [(ngModel)]="question">
+                <button class="btn btn-dark" (click)="sendquest()">Confirm</button>           
+            </div>
+        </div>
+            <hr class="xxx">
+            <div class="mb-4 mt-4 d-flex justify-content-center">
+                <input type="text" class="form-control d-inline-block mr-3 w-75" name="reps" placeholder="Answer 1">
+                <input type="checkbox" class="ms-3 form-check-input" id="1">
+            </div>
+            <div class="mb-4  d-flex justify-content-center ">
+                <input type="text" class=" form-control d-inline-block mr-3 w-75" name="reps" placeholder="Answer 2">
+                <input type="checkbox" class="ms-3 form-check-input" id="2">
+            </div>
+            <div #container2></div>
+            <button class="btn btn-dark rounded-circle mb-3" style="width: 40px; height: 40px;" (click)="addQuestion()">
+                <i class="bi bi-plus"></i>
+            </button>
+        </div>
+    </div>
+  
+    
+</body>

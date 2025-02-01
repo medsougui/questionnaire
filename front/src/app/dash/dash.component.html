@@ -1,0 +1,33 @@
+<div class=" row text-center text-dark " style="width: 90%;">
+<div class="col-3 p-2 col-lg-3 me-3 me-lg-5  ms-2 ms-lg-5 row d-flex align-content-center widg">
+  <div class="col-lg-6 h-50 d-flex justify-content-center align-items-center h4 ">Total question </div>
+  <div class="text-white col-lg-6 bg-secondary h-50 d-flex justify-content-around align-items-center"style="border-radius: 20px;border: solid ;border-width: 2px; border-color:black ;">{{quests.length}}<i class="bi bi-card-list"></i></div>
+</div>
+<div class="col-3 p-2 col-lg-3 me-3 me-lg-5 row d-flex align-content-center widg">
+  <div class="col-lg-6 h-50 d-flex justify-content-center align-items-center h4">Total users </div>
+  <div class="text-white col-lg-6 bg-secondary h-50 d-flex justify-content-around align-items-center"style="border-radius: 20px;border: solid ;border-width: 2px; border-color:black ;">{{ques.length}}<i class="bi bi-people-fill"></i></div>
+</div>
+<div class="col-3 p-2 col-lg-3 me-3 me-lg-5  row d-flex align-content-center widg">
+  <div class="col-lg-6 h-50 d-flex justify-content-center align-items-center h4">active question</div>
+  <div class="text-white col-lg-6 bg-secondary  h-50  d-flex justify-content-around align-items-center" style="border-radius: 20px;border: solid ;border-width: 2px; border-color:black ;">{{active}}<i class="bi bi-card-checklist "></i></div>
+</div>
+</div>
+<div class="w-75 ms-1  mt-4 ms-xl-5 d-flex row" style="border: solid;border-color:brown;">
+  <div class=" d-flex  mb-2 mt-2 ms-md-2 ms-sm-2 col-xs-2 col-7 col-sm-6 col-xl-8 col-lg-7  me-xl-4">
+    <div class="mt-2 col-xs-1 h3 justify-self-start ">Question: {{this.quest}} </div>
+    <div class="row d-none d-md-flex d-flex mt-lg-5 h5 justify-content-center ms-3 ms-lg-0 align-self-center"  >
+      <div class="col me-5">coorect: <i class="rectanglev mt-2 ms-4"></i><p class="ms-2"> {{((winners *100)/total).toString().substring(0,4) }}%</p></div>
+      <div class="col ms-xl-5">false: <i class="rectanglef mt-2 ms-3"></i><p class="ms-2">{{ (((total-winners) *100)/total).toString().substring(0,4)}}%</p> </div>
+    </div>
+  </div>
+<div class="circle-container mt-1 mb-2 ms-4 ms-md-5 ms-sm-5 col-md-2">
+    <svg class="circle" width="200" height="200">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="40"></circle>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="green" stroke-width="40" [attr.stroke-dasharray]="winnersPercentage * 439 + ' 440'"></circle>
+    </svg>
+<div class="winner-count fw-bold">{{ total }}</div>
+<div class="winner-count mt-5 d-flex justify-content-around"><div class="text-success me-3">{{winners}}</div><div class="text-danger">{{total-winners}}</div></div>
+</div>
+</div>
+
+  

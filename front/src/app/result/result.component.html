@@ -1,0 +1,44 @@
+<body #pdf class="" style="min-height:100vh;background-color: #0F2167 ;">
+    <div class="d-flex p-4 justify-content-center align-items-center">
+      <div class="position-absolute  top-0 start-0">
+        <img src="../../assets/img/logo1 (1).png" style="min-width: 90px;" width="15%" height="13%" alt="">
+      </div>
+      <!-- <div *ngIf="!isLgMode" class="position-absolute top-0 start-0">
+        <img src="../../assets/img/logo2.png" width="20%" height="13%" alt="">
+      </div> -->
+      <div class="" style="background-color:#3559E0; width: 73% ;border-radius: 45px;box-shadow: 0 0 10px rgb(0, 0, 0);">
+        <div class="d-flex justify-content-center">
+          <div class="mt-5 alert alert-secondary" style="width: 85%;align-items: center;justify-self: center;" role="alert">
+            <div class="alert-heading text-center h4">Your score is ({{score}}/{{tabData.length}}) </div>
+            <p></p>
+            <hr>
+            <div class="mb-0 d-flex align-items-center justify-content-between">Thank you {{nom}} for completing our questionnaire .you can get your results in a pdf
+              <div class="" ><button class="m-1 btn btn-outline-success p-2 " style="border-width:3px; height: 40px;">
+                <i (click)="generatePDF()" class="bi bi-filetype-pdf"></i></button>
+                <button class="m-1 btn btn-outline-danger p-2 " style="border-width:3px; height: 40px;">
+                  <i (click)="logout()" class="bi bi-box-arrow-left"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div #container *ngFor="let tab of tabData" class="mb-3 mt-5 d-flex justify-content-center">
+          <table class="table table-secondary" style="width:80%;" name="repp" id={{tab.qid}}>
+            <thead *ngFor="let quest of quests" class="" name="">
+              <tr >
+                <td colspan="5" class="fs-5 fw-bold p-3 "*ngIf="tab.qid==quest.id" >{{quest.questions}} <i *ngIf="!tab.isCorrect" class="text-danger bi-x-circle"></i><i *ngIf="tab.isCorrect" class="text-success bi-check-circle"></i></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  class="" *ngFor="let rep of tab.checkboxes">
+                <td [ngStyle]="{'background-color': rep.checkboxId=='true' ? ' #d4edda' : '#f8d7da'}"colspan="4"  class="p-3" id={{rep.id}}>{{ rep.responses }}</td>
+                <td [ngStyle]="{'background-color': rep.checkboxId=='true' ? ' #d4edda' : '#f8d7da'}"class="" style="text-align: center; vertical-align: middle; width: 30px;">
+                  <input type="checkbox" #checkbox name="" [id]="rep['t/f']" [checked]="rep.isChecked" disabled>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  

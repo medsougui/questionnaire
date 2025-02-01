@@ -1,0 +1,25 @@
+<div class="d-flex">
+  <i class="bi-arrow-left-circle h3 ms-2 mt-2 arrow-icon" routerLink="/quest"></i>    
+</div>
+<div class="mt-2 ms-lg-5 mt-md-4 w-75">   
+  <div class="me-sm-5 me-md-0 " *ngFor="let quest of quests" >
+    <div class="card xxx" *ngIf="quest.id == Id">
+      <div class="card-header xxx">
+        <h2 class="text-center p-1">{{quest.questions}}</h2>
+      </div>
+      <div *ngFor="let rep of reps" class="card-body bg-white">
+        <div class="accordion" id="accordionExample">
+          <div class="card xxx">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <p class="text">
+                  <strong [ngClass]="{'text-success': rep['t/f'], 'text-dark': !rep['t/f']}">Answer {{rep.id}} : </strong> {{rep.reponse}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
